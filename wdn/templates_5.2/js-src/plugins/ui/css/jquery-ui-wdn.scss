@@ -83,11 +83,12 @@ a.ui-button:active {
 
 .ui-datepicker .ui-datepicker-header {
   align-items: center;
-  @include bg-lighter;
+  @include bg-darker;
   border-color: var(--b-table);
   border-bottom-width: 0;
-  color: var(--heading);
+  @include cream;
   display: flex;
+  font-weight: 400;
   justify-content: space-between;
   padding: .75em .75em .56em;
 }
@@ -97,12 +98,16 @@ a.ui-button:active {
   content: none;
 }
 
-.ui-datepicker .ui-datepicker-header .ui-state-hover {
-  background: none;
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev .ui-icon {
+  background: url("images/arrow-circle-left-5.svg") 0 0 / 100% 100% no-repeat;
 }
 
-.ui-datepicker .ui-datepicker-header .ui-state-hover .ui-icon {
-  background-image: url("images/ui-icons_ffffff_256x240.png");
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next .ui-icon {
+  background: url("images/arrow-circle-right-5.svg") 0 0 / 100% 100% no-repeat;
+}
+
+.ui-datepicker .ui-datepicker-header .ui-state-hover {
+  background: none;
 }
 
 .ui-datepicker .ui-state-active,
@@ -188,9 +193,13 @@ a.ui-button:active {
   border-radius: 0 !important;
 }
 
-.ui-button {
+.ui-button,
+button.ui-button,
+input[type=button].ui-button,
+input[type=submit].ui-button {
   @include txt-xs;
   @include ls-2;
+  @include lh-4;
   padding: $length-em-3 $length-em-5;
   text-transform: uppercase;
 }
